@@ -1,13 +1,10 @@
 package com.example.MockUp.Model;
 
-import lombok.*;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class RequestDTO {
     
-    private String lastname;
-    private String firstname;
-    private String id;
+    private int count;
 
 }

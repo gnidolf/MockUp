@@ -1,11 +1,12 @@
 package com.example.MockUp.Controller;
 
+import com.example.MockUp.Model.*;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory; 
+import org.slf4j.*;
 
 @RestController
 public class MainController {
@@ -16,16 +17,26 @@ public class MainController {
 
     @PostMapping(
         value = "/test",
-        producers = MediaType.APPLICATION_JSON_VALUE,
-        consumers = MediaType.APPLICATION_JSON_VALUE
+        produces = MediaType.APPLICATION_JSON_VALUE,
+        consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public Object postValue() {
+    public Object postValue(@RequestBody RequestDTO requestDTO) {
+        
+        List<ResponseDTO> responseList = new ArrayList<ResponseDTO>();
 
-        try {
-            String id = RequestDTO.getid();
-            char firstDigit.charAt()
-        } catch {
-
+        int count = requestDTO.getCount();
+        
+        for(int i = 1; i < count+1; i++){
+            ResponseDTO responseDTO = new ResponseDTO();
+            responseDTO.setLastname("lastname" + i);
+            responseDTO.setFirstname("firstname" + i);
+            responseDTO.setId(i);
+            System.out.println(responseDTO);
+            responseList.add(responseDTO);
         }
+        
+
+        return responseList;
+
     }
 }
