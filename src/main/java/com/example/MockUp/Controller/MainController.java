@@ -6,12 +6,12 @@ import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
-import org.slf4j.*;
+// import org.slf4j.*; доделать логирование
 
 @RestController
 public class MainController {
 
-    private Logger log = LoggerFactory.getLogger(MainController.class);
+    // private Logger log = LoggerFactory.getLogger(MainController.class);
 
     ObjectMapper mapper = new ObjectMapper();
 
