@@ -20,21 +20,20 @@ public class MainController {
         produces = MediaType.APPLICATION_JSON_VALUE,
         consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public Object postValue(@RequestBody RequestDTO requestDTO) {
+    public Object postValue(@RequestBody Request requestDTO) {
         
-        List<ResponseDTO> responseList = new ArrayList<ResponseDTO>();
+        List<Response> responseList = new ArrayList<Response>();
 
         int count = requestDTO.getCount();
         
         for(int i = 1; i < count+1; i++){
-            ResponseDTO responseDTO = new ResponseDTO();
+            Response responseDTO = new Response();
             responseDTO.setLastname("lastname" + i);
             responseDTO.setFirstname("firstname" + i);
             responseDTO.setId(i);
             System.out.println(responseDTO);
             responseList.add(responseDTO);
         }
-        
 
         return responseList;
 

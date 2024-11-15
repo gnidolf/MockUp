@@ -3,7 +3,7 @@ package com.example.MockUp.Model;
 import lombok.Data;
 
 @Data
-public class ResponseDTO {
+public class Response {
    
     private String lastname;
     private String firstname;

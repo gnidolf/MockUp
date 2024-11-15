@@ -3,7 +3,7 @@ package com.example.MockUp.Model;
 import lombok.Data;
 
 @Data
-public class RequestDTO {
+public class Request {
     
     private int count;
 
