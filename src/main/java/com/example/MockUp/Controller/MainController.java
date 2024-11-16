@@ -31,10 +31,9 @@ public class MainController {
             responseDTO.setLastname("lastname" + i);
             responseDTO.setFirstname("firstname" + i);
             responseDTO.setId(i);
-            System.out.println(responseDTO);
             responseList.add(responseDTO);
         }
-
+        
         return responseList;
 
     }
