@@ -3,7 +3,6 @@ package com.example.MockUp.Controller;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.MockUp.Model.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
 import org.slf4j.*;
@@ -12,8 +11,6 @@ import org.slf4j.*;
 public class MainController {
 
     private Logger log = LoggerFactory.getLogger(MainController.class);
-
-    ObjectMapper mapper = new ObjectMapper();
 
     @PostMapping(
         value = "/test",
@@ -34,7 +31,7 @@ public class MainController {
         List<Response> responseList = new ArrayList<Response>();
 
         int count = request.getCount();
-        
+    
         for(int i = 1; i < count+1; i++){
             Response response = new Response();
             response.setLastname("lastname" + i);
